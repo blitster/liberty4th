@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Liberty Ward 4th of July Celebration Sing-Along</title>
+  <style>
+    :root {
+      --navy: #0b1f45;
+      --blue: #174ea6;
+      --red: #b31942;
+      --cream: #fff8ec;
+      --white: #ffffff;
+      --gold: #f2c94c;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--navy);
+      background: linear-gradient(180deg, #fff8ec 0%, #ffffff 45%, #f3f7ff 100%);
+      line-height: 1.55;
+    }
+    .hero {
+      position: relative;
+      color: var(--white);
+      text-align: center;
+      padding: 56px 18px 42px;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(255,255,255,.25) 0 2px, transparent 3px),
+        radial-gradient(circle at 85% 25%, rgba(255,255,255,.25) 0 2px, transparent 3px),
+        linear-gradient(135deg, var(--navy), var(--blue));
+      overflow: hidden;
+    }
+    .hero::before, .hero::after {
+      content: "";
+      position: absolute;
+      left: -10%; right: -10%;
+      height: 14px;
+      background: repeating-linear-gradient(90deg, var(--red) 0 70px, var(--white) 70px 140px);
+      opacity: .95;
+    }
+    .hero::before { top: 0; }
+    .hero::after { bottom: 0; }
+    .badge {
+      display: inline-block;
+      padding: 7px 14px;
+      border: 1px solid rgba(255,255,255,.6);
+      border-radius: 999px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    h1 {
+      margin: 0 auto 10px;
+      max-width: 900px;
+      font-size: clamp(34px, 8vw, 68px);
+      line-height: 1;
+    }
+    .subtitle {
+      margin: 0 auto;
+      max-width: 720px;
+      font-family: Arial, sans-serif;
+      font-size: clamp(17px, 3vw, 22px);
+    }
+    .container { max-width: 980px; margin: 0 auto; padding: 22px 18px 60px; }
+    .card {
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(11,31,69,.12);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(11,31,69,.10);
+      padding: 22px;
+      margin: 22px 0;
+    }
+    .song-nav {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .song-nav a, .button {
+      display: block;
+      text-decoration: none;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--red), #d63447);
+      padding: 13px 14px;
+      border-radius: 14px;
+      box-shadow: 0 5px 14px rgba(179,25,66,.25);
+    }
+    .song-nav a:nth-child(even) { background: linear-gradient(135deg, var(--blue), var(--navy)); }
+    .intro { font-family: Arial, sans-serif; font-size: 18px; }
+    section.song {
+      scroll-margin-top: 16px;
+      border-left: 8px solid var(--red);
+    }
+    section.song:nth-of-type(even) { border-left-color: var(--blue); }
+    h2 {
+      margin: 0 0 8px;
+      font-size: clamp(27px, 5vw, 42px);
+      color: var(--navy);
+    }
+    .note {
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      color: #42526e;
+      background: #f3f6fb;
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin: 12px 0 18px;
+    }
+    .lyrics {
+      white-space: pre-line;
+      font-size: 20px;
+      max-width: 760px;
+    }
+    .placeholder {
+      font-family: Arial, sans-serif;
+      background: #fff3f3;
+      border: 1px dashed rgba(179,25,66,.5);
+      border-radius: 14px;
+      padding: 16px;
+      margin-top: 12px;
+    }
+    .official-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .official-links a {
+      display: inline-block;
+      font-family: Arial, sans-serif;
+      color: var(--blue);
+      background: #eef4ff;
+      border: 1px solid #ccdfff;
+      padding: 9px 12px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .top-link {
+      display: inline-block;
+      margin-top: 20px;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      color: var(--red);
+    }
+    footer {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      color: #53627d;
+      padding: 26px 16px 40px;
+    }
+    @media print {
+      .song-nav, .top-link, .official-links { display: none; }
+      .hero { color: #000; background: #fff; padding: 20px; }
+      .card { box-shadow: none; border: 1px solid #ddd; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="badge">Liberty Ward</div>
+    <h1>4th of July Celebration</h1>
+    <p class="subtitle">Patriotic Sing-Along Lyrics</p>
+  </header>
+
+  <main class="container">
+    <div class="card intro">
+      <strong>Welcome!</strong> Choose a song below and sing along as each number is performed.
+      <nav class="song-nav" aria-label="Song list">
+        <a href="#america-the-beautiful">America the Beautiful</a>
+        <a href="#god-bless-america">God Bless America</a>
+        <a href="#proud-to-be-an-american">I’m Proud to Be an American</a>
+        <a href="#this-land-is-your-land">This Land Is Your Land</a>
+        <a href="#my-country-tis-of-thee">My Country ’Tis of Thee</a>
+        <a href="#country-roads">Take Me Home, Country Roads</a>
+      </nav>
+    </div>
+
+    <section class="song card" id="america-the-beautiful">
+      <h2>America the Beautiful</h2>
+      <div class="note">Words by Katharine Lee Bates. Music by Samuel A. Ward. Public domain in the United States.</div>
+      <div class="lyrics">O beautiful for spacious skies,
+For amber waves of grain,
+For purple mountain majesties
+Above the fruited plain!
+America! America!
+God shed His grace on thee,
+And crown thy good with brotherhood
+From sea to shining sea!
+
+O beautiful for pilgrim feet,
+Whose stern, impassioned stress
+A thoroughfare for freedom beat
+Across the wilderness!
+America! America!
+God mend thine every flaw,
+Confirm thy soul in self-control,
+Thy liberty in law!
+
+O beautiful for heroes proved
+In liberating strife,
+Who more than self their country loved,
+And mercy more than life!
+America! America!
+May God thy gold refine,
+Till all success be nobleness,
+And every gain divine!
+
+O beautiful for patriot dream
+That sees beyond the years
+Thine alabaster cities gleam
+Undimmed by human tears!
+America! America!
+God shed His grace on thee,
+And crown thy good with brotherhood
+From sea to shining sea!</div>
+      <a class="top-link" href="#top">Back to song list</a>
+    </section>
+
+    <section class="song card" id="god-bless-america">
+      <h2>God Bless America</h2>
+      <div class="note">This song is copyrighted, so full lyrics are not included in this public template.</div>
+      <div class="placeholder">
+        Add licensed lyrics here, or project/display lyrics from a licensed source for the event.
+        <div class="official-links">
+          <a href="https://www.google.com/search?q=God+Bless+America+lyrics" target="_blank" rel="noopener">Open lyrics search</a>
+        </div>
+      </div>
+      <a class="top-link" href="#top">Back to song list</a>
+    </section>
+
+    <section class="song card" id="proud-to-be-an-american">
+      <h2>I’m Proud to Be an American</h2>
+      <div class="note">Also known as “God Bless the U.S.A.” This song is copyrighted, so full lyrics are not included in this public template.</div>
+      <div class="placeholder">
+        Add licensed lyrics here, or use a legally authorized lyric sheet for the celebration.
+        <div class="official-links">
+          <a href="https://www.google.com/search?q=God+Bless+the+USA+Lee+Greenwood+lyrics" target="_blank" rel="noopener">Open lyrics search</a>
+        </div>
+      </div>
+      <a class="top-link" href="#top">Back to song list</a>
+    </section>
+
+    <section class="song card" id="this-land-is-your-land">
+      <h2>This Land Is Your Land</h2>
+      <div class="note">Because copyright status can vary by version and use, this template leaves space for licensed or approved lyrics.</div>
+      <div class="placeholder">
+        Add the approved verses you plan to sing here.
+        <div class="official-links">
+          <a href="https://www.google.com/search?q=This+Land+Is+Your+Land+lyrics" target="_blank" rel="noopener">Open lyrics search</a>
+        </div>
+      </div>
+      <a class="top-link" href="#top">Back to song list</a>
+    </section>
+
+    <section class="song card" id="my-country-tis-of-thee">
+      <h2>My Country ’Tis of Thee</h2>
+      <div class="note">Words by Samuel Francis Smith. Public domain in the United States.</div>
+      <div class="lyrics">My country, ’tis of thee,
+Sweet land of liberty,
+Of thee I sing;
+Land where my fathers died,
+Land of the pilgrims’ pride,
+From every mountainside
+Let freedom ring!
+
+My native country, thee,
+Land of the noble free,
+Thy name I love;
+I love thy rocks and rills,
+Thy woods and templed hills;
+My heart with rapture thrills,
+Like that above.
+
+Let music swell the breeze,
+And ring from all the trees
+Sweet freedom’s song;
+Let mortal tongues awake;
+Let all that breathe partake;
+Let rocks their silence break,
+The sound prolong.
+
+Our fathers’ God, to Thee,
+Author of liberty,
+To Thee we sing;
+Long may our land be bright
+With freedom’s holy light;
+Protect us by Thy might,
+Great God, our King!</div>
+      <a class="top-link" href="#top">Back to song list</a>
+    </section>
+
+    <section class="song card" id="country-roads">
+      <h2>Take Me Home, Country Roads</h2>
+      <div class="note">This song is copyrighted, so full lyrics are not included in this public template.</div>
+      <div class="placeholder">
+        Add licensed lyrics here, or direct attendees to an authorized lyrics source.
+        <div class="official-links">
+          <a href="https://www.google.com/search?q=Take+Me+Home+Country+Roads+lyrics" target="_blank" rel="noopener">Open lyrics search</a>
+        </div>
+      </div>
+      <a class="top-link" href="#top">Back to song list</a>
+    </section>
+  </main>
+
+  <footer>
+    Liberty Ward 4th of July Celebration • God bless America
+  </footer>
+</body>
+</html>
